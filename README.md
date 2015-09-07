@@ -1,1 +1,2 @@
 # static
+## for static files
