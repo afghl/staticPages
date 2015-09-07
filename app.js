@@ -1,10 +1,17 @@
+//libs
+var jade = require('jade');
+
+
+// application
 var express = require('express');
 var app = express();
-
-app.use(express.static('public'));
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/public');
+//
+// app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.render('index', { title : 'Home' });
 });
 
 var server = app.listen(5000, function () {
